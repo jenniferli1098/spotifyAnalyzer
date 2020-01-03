@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Songs
+{% endblock %}
+
+{% block main %}
+<h2>Search for Song</h2>
+<form class="search" action="/songs" method="POST">
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Search.." name="search">
+        <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+    </div>
+</form>
+<table class="table table-hover">
+    {%if rows%}
+    <thead>
+        <tr>
+            <th scope="col">TITLE</th>
+            <th scope="col">Artist</th>
+        </tr>
+    </thead>
+    {%endif%}
+    <tbody>
+        {%for row in rows%}
+        {% set id = row["id"] %}
+
+        <tr>
+
+            <td><a href="/song/{{id}}">{{row["name"]}}</a></td>
+
+            <td>{{row["artist"]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

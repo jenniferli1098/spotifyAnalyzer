@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Playlist
+{% endblock %}
+
+{% block main %}
+    {% for i in range(0,size)%}
+        <h2>{{rows[i]['name']}}</h2>
+        <p>{{rows[i]['text']}}</p>
+        <a href="/playlist_stats/{{i}}"><img src= "{{rows[i]['imgUrl']}}" width="200" height="200"></a>
+    {% endfor %}
+{% endblock %}
