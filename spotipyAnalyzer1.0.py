@@ -48,12 +48,12 @@ if __name__ == '__main__':
         printf(f"Usage: {sys.argv[0]} username")
         sys.exit()
 
-    # token = util.prompt_for_user_token(username, scope)
-    client_id = '2f201142f21b4250a4bf2969fdad812b'
-    client_secret = 'fa5d3f3ed57d4ae48c2f6fa7f9fdac66'
-    redirect_uri = 'https://google.com/'
-    token = util.prompt_for_user_token(username, scope, client_id, client_secret, redirect_uri)
-
+    #SET SPOTIPY_CLIENT_ID='
+    #SET SPOTIPY_CLIENT_SECRET=
+    #SET SPOTIPY_REDIRECT_URI='https://google.com/'
+    #token = util.prompt_for_user_token(username, scope, client_id, client_secret, redirect_uri)
+    token = util.prompt_for_user_token(username, scope)
+    print("hi")
     if not token:
         print (f"Can't get token for {username}")
     
